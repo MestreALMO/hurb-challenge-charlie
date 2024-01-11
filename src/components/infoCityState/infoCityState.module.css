@@ -1,0 +1,11 @@
+/* .main{} */
+
+.inputArea {
+  display: flex;
+}
+
+.inputArea input {
+  /* background-color: transparent;
+  border-color: transparent;
+  text-align: center; */
+}
