@@ -51,9 +51,9 @@ export const InfoWeather: React.FC = () => {
           <p>Vento: {ctxWeather.wind.speed}km/h</p>
           <p>Humidade: {ctxWeather.main.humidity}%</p>
           <p>AMANHÃ</p>
-          <p>{ctxWeather.main.temp}ºC</p>
+          <p>forecastºC</p>
           <p>DEPOIS DE AMANHÃ</p>
-          <p>{ctxWeather.main.temp}ºC</p>
+          <p>forecastºC</p>
           {/* Exiba as informações da previsão do tempo aqui */}
           <pre>{JSON.stringify(ctxWeather, null, 2)}</pre>
         </div>
