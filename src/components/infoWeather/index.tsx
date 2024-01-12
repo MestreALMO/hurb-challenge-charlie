@@ -1,10 +1,12 @@
 import { useCtxCityState } from "@/context/ctxCityState";
+import { useCtxForecast } from "@/context/ctxForecast";
 import { useCtxWeather } from "@/context/ctxWeather";
-import { useState } from "react";
 
 export const InfoWeather: React.FC = () => {
   const { ctxWeather, setCtxWeather } = useCtxWeather();
   const { ctxCity, setCtxCity, ctxState, setCtxState } = useCtxCityState();
+  const { ctxTomorrow, setCtxTomorrow, ctxAfterTomorrow, setCtxAfterTomorrow } =
+    useCtxForecast();
 
   const getWeather = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -15,11 +17,21 @@ export const InfoWeather: React.FC = () => {
       const data = await response.json();
       setCtxWeather(data);
     } catch (error) {
+      console.error("Erro ao obter a informação do tempo:", error);
+    }
+    try {
+      const response = await fetch(
+        `/api/forecast?city=${ctxCity}&state=${ctxState}`
+      );
+      const data = await response.json();
+      setCtxTomorrow(data.tomorrow);
+      setCtxAfterTomorrow(data.afterTomorrow);
+    } catch (error) {
       console.error("Erro ao obter a previsão do tempo:", error);
     }
   };
 
-  console.log(ctxWeather);
+  setCtxTomorrow(43);
 
   return (
     <div>
@@ -43,7 +55,7 @@ export const InfoWeather: React.FC = () => {
       {ctxWeather && (
         <div>
           <h2>
-            Previsão do Tempo para {ctxCity}, {ctxState}
+            Previsão do Tempo para {ctxCity}, {ctxState}.
           </h2>
           <p>HOJE</p>
           <p>{ctxWeather.main.temp}ºC</p>
@@ -51,11 +63,9 @@ export const InfoWeather: React.FC = () => {
           <p>Vento: {ctxWeather.wind.speed}km/h</p>
           <p>Humidade: {ctxWeather.main.humidity}%</p>
           <p>AMANHÃ</p>
-          <p>forecastºC</p>
+          <p>{ctxTomorrow}ºC</p>
           <p>DEPOIS DE AMANHÃ</p>
-          <p>forecastºC</p>
-          {/* Exiba as informações da previsão do tempo aqui */}
-          <pre>{JSON.stringify(ctxWeather, null, 2)}</pre>
+          <p>{ctxAfterTomorrow}ºC</p>
         </div>
       )}
     </div>

@@ -15,7 +15,7 @@ export default async function handler(
     }
 
     const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state}&appid=${apiKey}&cnt=3&lang=pt_br&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state}&appid=${apiKey}&lang=pt_br&units=metric`;
 
     const response = await axios.get(apiUrl);
     const weatherData = response.data;
