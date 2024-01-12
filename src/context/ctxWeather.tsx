@@ -7,27 +7,35 @@ import {
   useState,
 } from "react";
 
-interface ctxWeatherData {
-  main: { temp: string; humidity: string };
-  weather: [{ description: string }];
-  wind: { speed: string };
+interface Weather {
+  main: {
+    temp: number;
+    humidity: number;
+  };
+  weather: {
+    description: string;
+  }[];
+  wind: {
+    speed: number;
+  };
 }
 
-interface ctxWeatherContextProps {
-  ctxWeather: ctxWeatherData;
-  setCtxWeather: Dispatch<SetStateAction<ctxWeatherData>>;
+interface CtxWeatherContextProps {
+  ctxWeather: Weather | null;
+  setCtxWeather: Dispatch<SetStateAction<Weather | null>>;
 }
 
-const CtxWeatherContext = createContext<ctxWeatherContextProps>(
-  {} as ctxWeatherContextProps
-);
+const CtxWeatherContext = createContext<CtxWeatherContextProps>({
+  ctxWeather: null,
+  setCtxWeather: () => {},
+});
 
 export default function CtxWeatherProvider({
   children,
 }: {
   children: ReactNode;
 }) {
-  const [ctxWeather, setCtxWeather] = useState({} as ctxWeatherData);
+  const [ctxWeather, setCtxWeather] = useState<Weather | null>(null);
 
   return (
     <CtxWeatherContext.Provider value={{ ctxWeather, setCtxWeather }}>
