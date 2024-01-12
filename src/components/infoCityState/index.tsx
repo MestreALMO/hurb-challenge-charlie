@@ -1,11 +1,9 @@
 import { useCtxCityState } from "@/context/ctxCityState";
-import axios from "axios";
 import { useState, useEffect, FC } from "react";
 import styles from "./infoCityState.module.css";
+import axios from "axios";
 
 export const InfoCityState: FC = () => {
-  const apiKey = process.env.NEXT_PUBLIC_OPENCAGE_API_KEY;
-  // getting latitude, longitude, city and state
   const [coordinates, setCoordinates] = useState<{
     latitude: number;
     longitude: number;
@@ -20,12 +18,13 @@ export const InfoCityState: FC = () => {
           setCoordinates({ latitude, longitude });
 
           try {
+            // Chama a nova rota API
             const response = await axios.get(
-              `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`
+              `/api/cityState?latitude=${latitude}&longitude=${longitude}`
             );
 
-            setCtxCity(response.data.results[0].components.city);
-            setCtxState(response.data.results[0].components.state);
+            setCtxCity(response.data.city);
+            setCtxState(response.data.state);
           } catch (error) {
             console.error("Erro ao obter nome da cidade:", error);
           }
@@ -43,6 +42,8 @@ export const InfoCityState: FC = () => {
     <div className={`${styles.main}`}>
       {coordinates ? (
         <form onSubmit={() => {}} className={`${styles.inputArea}`}>
+          lat:{coordinates.latitude}
+          long:{coordinates.longitude}
           <input
             type="text"
             value={ctxCity}

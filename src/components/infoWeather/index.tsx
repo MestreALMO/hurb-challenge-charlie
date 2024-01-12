@@ -46,9 +46,14 @@ export const InfoWeather: React.FC = () => {
             Previsão do Tempo para {ctxCity}, {ctxState}
           </h2>
           <p>HOJE</p>
-          <p></p>
+          <p>{ctxWeather.main.temp}ºC</p>
+          <p>{ctxWeather.weather[0].description}</p>
+          <p>Vento: {ctxWeather.wind.speed}km/h</p>
+          <p>Humidade: {ctxWeather.main.humidity}%</p>
           <p>AMANHÃ</p>
+          <p>{ctxWeather.main.temp}ºC</p>
           <p>DEPOIS DE AMANHÃ</p>
+          <p>{ctxWeather.main.temp}ºC</p>
           {/* Exiba as informações da previsão do tempo aqui */}
           <pre>{JSON.stringify(ctxWeather, null, 2)}</pre>
         </div>
