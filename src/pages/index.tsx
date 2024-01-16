@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { InfoInput } from "@/components/infoInput";
 import { InfoWeather } from "@/components/infoWeather";
+import { BingBackground } from "@/components/bingBackground";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
       </Head>
       <main className={`${styles.main}`}>
         <div className={`${styles.mainData}`}>
+          {/* <div className={`${styles.backgroundImage}`}> */}
+          <BingBackground />
+          {/* </div> */}
           <InfoInput />
           <InfoWeather />
         </div>
