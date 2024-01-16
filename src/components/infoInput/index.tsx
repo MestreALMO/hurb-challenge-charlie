@@ -5,7 +5,7 @@ import { useState, useEffect, FC } from "react";
 import styles from "./infoCityState.module.css";
 import axios from "axios";
 
-export const InfoMainData: FC = () => {
+export const InfoInput: FC = () => {
   const [coordinates, setCoordinates] = useState<{
     latitude: number;
     longitude: number;
@@ -67,8 +67,8 @@ export const InfoMainData: FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await localization(); // Aguarde a conclusão da função localization
-      await getWeather(); // Chame getWeather após a conclusão de localization
+      await localization();
+      await getWeather();
     };
 
     fetchData();

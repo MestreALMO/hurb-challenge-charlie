@@ -2,7 +2,7 @@ import { useCtxCityState } from "@/context/ctxCityState";
 import { useCtxForecast } from "@/context/ctxForecast";
 import { useCtxWeather } from "@/context/ctxWeather";
 
-export const InfoWeather: React.FC = () => {
+export const InfoInput: React.FC = () => {
   const { ctxWeather, setCtxWeather } = useCtxWeather();
   const { ctxCity, setCtxCity, ctxState, setCtxState } = useCtxCityState();
   const { ctxTomorrow, setCtxTomorrow, ctxAfterTomorrow, setCtxAfterTomorrow } =

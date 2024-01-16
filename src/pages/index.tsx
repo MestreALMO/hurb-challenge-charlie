@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import { InfoMainData } from "@/components/infoMainData";
-import { InfoWeather } from "@/components/infoWeather";
+import { InfoInput } from "@/components/infoInput";
 
 export default function Home() {
   return (
@@ -13,8 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main}`}>
-        <InfoMainData />
-        {/* <InfoWeather /> */}
+        <InfoInput />
       </main>
     </>
   );
