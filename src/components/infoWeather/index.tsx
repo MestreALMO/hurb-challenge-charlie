@@ -1,71 +1,47 @@
 import { useCtxCityState } from "@/context/ctxCityState";
 import { useCtxForecast } from "@/context/ctxForecast";
 import { useCtxWeather } from "@/context/ctxWeather";
+import { useState } from "react";
+import styles from "./infoWeather.module.css";
+import svgSun from "@/icons/sun.svg";
+import Image from "next/image";
 
-export const InfoInput: React.FC = () => {
+export const InfoWeather: React.FC = () => {
+  const [coordinates, setCoordinates] = useState<{
+    latitude: number;
+    longitude: number;
+  } | null>(null);
   const { ctxWeather, setCtxWeather } = useCtxWeather();
   const { ctxCity, setCtxCity, ctxState, setCtxState } = useCtxCityState();
   const { ctxTomorrow, setCtxTomorrow, ctxAfterTomorrow, setCtxAfterTomorrow } =
     useCtxForecast();
 
-  const getWeather = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    try {
-      const response = await fetch(
-        `/api/weather?city=${ctxCity}&state=${ctxState}`
-      );
-      const data = await response.json();
-      setCtxWeather(data);
-    } catch (error) {
-      console.error("Erro ao obter a informação do tempo:", error);
-    }
-    try {
-      const response = await fetch(
-        `/api/forecast?city=${ctxCity}&state=${ctxState}`
-      );
-      const data = await response.json();
-      setCtxTomorrow(data.tomorrow);
-      setCtxAfterTomorrow(data.afterTomorrow);
-    } catch (error) {
-      console.error("Erro ao obter a previsão do tempo:", error);
-    }
-  };
-
-  setCtxTomorrow(43);
-
   return (
-    <div>
-      <h1>Consulta de Previsão do Tempo</h1>
-      <form onSubmit={getWeather}>
-        <input
-          type="text"
-          placeholder="Digite a cidade"
-          value={ctxCity}
-          onChange={(e) => setCtxCity(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Digite o estado"
-          value={ctxState}
-          onChange={(e) => setCtxState(e.target.value)}
-        />
-        <button type="submit">Consultar</button>
-      </form>
-
-      {ctxWeather && (
+    <div className={`${styles.main}`}>
+      {typeof ctxWeather?.main !== "undefined" && (
         <div>
-          <h2>
-            Previsão do Tempo para {ctxCity}, {ctxState}.
-          </h2>
-          <p>HOJE</p>
-          <p>{ctxWeather.main.temp}ºC</p>
-          <p>{ctxWeather.weather[0].description}</p>
-          <p>Vento: {ctxWeather.wind.speed}km/h</p>
-          <p>Humidade: {ctxWeather.main.humidity}%</p>
-          <p>AMANHÃ</p>
-          <p>{ctxTomorrow}ºC</p>
-          <p>DEPOIS DE AMANHÃ</p>
-          <p>{ctxAfterTomorrow}ºC</p>
+          <div>
+            <Image
+              src={svgSun}
+              alt="compass icon"
+              className={`${styles.icon}`}
+            />
+            <div className={`${styles.weatherToday}`}>
+              <p>HOJE</p>
+              <p>{ctxWeather.main.temp}ºC</p>
+              <p>{ctxWeather.weather[0].description}</p>
+              <p>Vento: {ctxWeather.wind.speed}km/h</p>
+              <p>Humidade: {ctxWeather.main.humidity}%</p>
+            </div>
+          </div>
+          <div>
+            <p>AMANHÃ</p>
+            <p>{ctxTomorrow}ºC</p>
+          </div>
+          <div>
+            <p>DEPOIS DE AMANHÃ</p>
+            <p>{ctxAfterTomorrow}ºC</p>
+          </div>
         </div>
       )}
     </div>

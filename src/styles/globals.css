@@ -1,13 +1,7 @@
 :root {
-  /* light theme */
   --background: #f1f1f1;
   --foreground: #1f1f1f;
-  --gray: #555;
-
-  /* dark theme */
-  --background-dark: #1f1f1f;
-  --foreground-dark: #f1f1f1;
-  --gray-dark: #999;
+  --inputArea: #8e8a88;
 }
 
 * {

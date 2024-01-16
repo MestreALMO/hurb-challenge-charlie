@@ -1,11 +1,59 @@
-/* .main{} */
+.main {
+  display: flex;
+  color: var(--inputArea);
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 8px 0 8px 8px;
+}
 
 .inputArea {
   display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--inputArea);
+  width: 100%;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  flex-wrap: wrap;
+}
+
+.inputArea p {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 
 .inputArea input {
-  /* background-color: transparent;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+.inputCity {
+  background-color: transparent;
   border-color: transparent;
-  text-align: center; */
+  text-align: end;
+  min-width: 30px;
+  width: 30%;
+  max-width: 162px;
+}
+
+.inputState {
+  background-color: transparent;
+  border-color: transparent;
+  text-align: start;
+  width: 70%;
+  max-width: 162px;
 }
