@@ -12,7 +12,6 @@ export const InfoWeather: React.FC = () => {
     longitude: number;
   } | null>(null);
   const { ctxWeather, setCtxWeather } = useCtxWeather();
-  const { ctxCity, setCtxCity, ctxState, setCtxState } = useCtxCityState();
   const { ctxTomorrow, setCtxTomorrow, ctxAfterTomorrow, setCtxAfterTomorrow } =
     useCtxForecast();
 

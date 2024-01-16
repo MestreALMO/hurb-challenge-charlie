@@ -1,6 +1,7 @@
 .main {
   display: flex;
   color: var(--inputArea);
+  background-color: var(--inputBackgroundClr);
 }
 
 .icon {

@@ -15,9 +15,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main}`}>
         <div className={`${styles.mainData}`}>
-          {/* <div className={`${styles.backgroundImage}`}> */}
           <BingBackground />
-          {/* </div> */}
           <InfoInput />
           <InfoWeather />
         </div>
