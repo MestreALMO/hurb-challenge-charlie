@@ -54,7 +54,3 @@ O layout deve ser seguido, mas você pode sugerir melhorias. Descreva essas melh
 Quaisquer dúvidas que você venha a ter, consulte as [_issues_](https://github.com/HurbCom/challenge-charlie/issues) para ver se alguém já não a fez e caso você não ache sua resposta, abra você mesmo uma nova issue!
 
 Boa sorte e boa viagem! ;)
-
-<p align="center">
-  <img src="ca.jpg" alt="Challange accepted" />
-</p>
