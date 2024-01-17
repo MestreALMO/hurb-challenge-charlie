@@ -1,6 +1,38 @@
-/* .main{} */
+.main {
+  color: #fff;
+}
 
 .icon {
   height: 150px;
   width: 150px;
+}
+
+.todayWeatherRed {
+  background-color: var(--todayBackgroundClrRed);
+}
+.tomorrowWeatherRed {
+  background-color: var(--tomorrowBackgroundClrRed);
+}
+.afterTomorrowWeatherRed {
+  background-color: var(--afterTomorrowBackgroundClrRed);
+}
+
+.todayWeatherYellow {
+  background-color: var(--todayBackgroundClrYellow);
+}
+.tomorrowWeatherYellow {
+  background-color: var(--tomorrowBackgroundClrYellow);
+}
+.afterTomorrowWeatherYellow {
+  background-color: var(--afterTomorrowBackgroundClrYellow);
+}
+
+.todayWeatherBlue {
+  background-color: var(--todayBackgroundClrBlue);
+}
+.tomorrowWeatherBlue {
+  background-color: var(--tomorrowBackgroundClrBlue);
+}
+.afterTomorrowWeatherBlue {
+  background-color: var(--afterTomorrowBackgroundClrBlue);
 }
