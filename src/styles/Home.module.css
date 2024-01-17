@@ -1,8 +1,14 @@
-/* .main {
+.main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  justify-content: center;
   min-height: 100vh;
-} */
+}
+
+.dataBlock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 450px;
+}

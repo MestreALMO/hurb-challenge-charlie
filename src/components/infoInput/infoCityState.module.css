@@ -2,6 +2,7 @@
   display: flex;
   color: var(--inputArea);
   background-color: var(--inputBackgroundClr);
+  width: 100%;
 }
 
 .icon {
@@ -40,6 +41,7 @@
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
+  padding-left: 8px;
 }
 
 .inputCity {
@@ -47,14 +49,14 @@
   border-color: transparent;
   text-align: end;
   min-width: 30px;
-  width: 30%;
-  max-width: 162px;
+  width: 100%;
+  max-width: 170px;
 }
 
 .inputState {
   background-color: transparent;
   border-color: transparent;
   text-align: start;
-  width: 70%;
-  max-width: 162px;
+  width: 100%;
+  max-width: 170px;
 }

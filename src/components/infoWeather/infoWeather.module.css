@@ -1,10 +1,39 @@
 .main {
   color: #fff;
+  width: 100%;
 }
 
 .icon {
   height: 150px;
   width: 150px;
+}
+
+.imgBlock {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todayInfo {
+  margin: 10px 0;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.dayData {
+  display: flex;
+  font-size: 18px;
+  width: 100%;
+}
+
+.infoSides {
+  width: 100%;
+  padding: 10px;
+}
+
+.todayDescription {
+  padding: 10px 0;
 }
 
 .todayWeatherRed {

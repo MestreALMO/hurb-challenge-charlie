@@ -7,8 +7,8 @@
 	<g id="Layer_1_1_">
 		<g id="Grid">
 			<g>
-				<rect fill="none" stroke="#A9CCDB" stroke-miterlimit="10" width="512" height="512"/>
-				<!-- <line fill="none" stroke="#A9CCDB" stroke-miterlimit="10" x1="0" y1="480" x2="512" y2="480" stroke-opacity="0"/>
+				<!-- <rect fill="none" stroke="#A9CCDB" stroke-miterlimit="10" width="512" height="512"/>
+				<line fill="none" stroke="#A9CCDB" stroke-miterlimit="10" x1="0" y1="480" x2="512" y2="480" stroke-opacity="0"/>
 				<line fill="none" stroke="#A9CCDB" stroke-miterlimit="10" x1="0" y1="448" x2="512" y2="448" stroke-opacity="0"/>
 				<line fill="none" stroke="#A9CCDB" stroke-miterlimit="10" x1="0" y1="416" x2="512" y2="416"/>
 				<line fill="none" stroke="#A9CCDB" stroke-miterlimit="10" x1="0" y1="384" x2="512" y2="384"/>
