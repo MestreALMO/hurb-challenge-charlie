@@ -16,9 +16,11 @@ It also needed to run with docker as it was about to go to production.
 
 ## Points Where the Challenge Could Improve:
 
-Instead of a image as reference could be a Figma project, that would allow to have a better experience, I had to guess lot's of CSS coding thatin Figma I could see the desire option and apply that to the project.
+Instead of a image as reference could be a Figma project, that would allow to have a better experience, I had to guess lot's of CSS coding that in Figma I could see the desire option and apply that to the project.
 
-The collor pallette would also benefit from a Figma project, this point of the project seemed very important, but the colors itself were also a guess game, with it so important it could have been available.
+The collor pallette would also benefit from a Figma project, this point of the project seemed very important, but the colors itself were also a guess game, with it so important it could have been available. Not only Spaces and collor pallete could be improved, but font weight, font, svg sizes, etc.
+
+One of the aspects of the challenge was also create a new branch where the challenge was available, but I hadn't access to the project so I couldn't do it, as the next best thing I created my own repository to support the project and worked on it here.
 
 ## Running Application:
 
