@@ -14,6 +14,12 @@ Depending on the temperature the data will have a blue color if it is cold, a re
 
 It also needed to run with docker as it was about to go to production.
 
+## Points Where the Challenge Could Improve:
+
+Instead of a image as reference could be a Figma project, that would allow to have a better experience, I had to guess lot's of CSS coding thatin Figma I could see the desire option and apply that to the project.
+
+The collor pallette would also benefit from a Figma project, this point of the project seemed very important, but the colors itself were also a guess game, with it so important it could have been available.
+
 ## Running Application:
 
 ### With Docker:
