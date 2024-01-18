@@ -1,5 +1,5 @@
 # Use a imagem oficial do Node.js com a versão desejada
-FROM node:14
+FROM node:20.10.0
 
 # Crie e defina o diretório de trabalho no contêiner
 WORKDIR /usr/src/app
